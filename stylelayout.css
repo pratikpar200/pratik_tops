@@ -1,0 +1,71 @@
+.header1{
+         width:100%;
+         height:100px;
+         float:left;
+         color:black;
+         background-color:yellow;
+
+
+
+
+}
+
+.navbar{
+         width:100%;
+         height:60px;
+         float:left;
+         color:black;
+         background-color:red;
+
+
+        
+
+}
+
+.banner{
+	width:100%;
+	height:300px;
+	background-image:url("doremon.png");
+	background-size:100% 100%;  
+	float:left;
+	color:red;
+}
+
+.sidebar{
+         width:15%;
+         height:600px;
+         float:left;
+         color:black;
+         background-color:gray;
+  
+}
+
+.mainbar{
+          width:70%;
+         height:600px;
+         float:left;
+         color:black;
+         background-color:purple;
+
+
+}
+.mainbox{
+          width:33%;
+          float:left;
+         color:black;
+         
+
+
+}
+
+.footer{
+         width:25%;
+	height:100px;
+	background-color:black;
+	float:left;
+	color:white;
+}
+
+
+
+
