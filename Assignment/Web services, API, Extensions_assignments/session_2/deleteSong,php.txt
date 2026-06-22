@@ -1,0 +1,31 @@
+<?php
+
+/*
+Q4. Create a deleteSong.php endpoint that accepts DELETE requests and removes a song by its id from the 'songs' table, returning a JSON response with success or error.
+*/
+
+if($_SERVER['REQUEST_METHOD'] == "DELETE")
+{
+    $data = json_decode(file_get_contents("php://input"),true);
+
+    $id = $data['id'];
+
+    $delete = mysqli_query($conn,
+    "DELETE FROM songs WHERE id='$id'");
+
+    if($delete)
+    {
+        echo json_encode([
+            "message"=>"Song Deleted Successfully"
+        ]);
+    }
+    else
+    {
+        echo json_encode([
+            "message"=>"Delete Failed"
+        ]);
+    }
+}
+
+
+?>

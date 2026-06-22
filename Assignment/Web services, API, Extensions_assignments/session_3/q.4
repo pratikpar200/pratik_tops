@@ -1,0 +1,18 @@
+Q4. Write a Postman test script for a 'POST /wishlist' request (like adding an item to a Myntra wishlist) that checks if the response status is 201 and if the response body contains the correct product name.
+
+Postman Test Script:
+
+pm.test("Status Code is 201", function () {
+    pm.response.to.have.status(201);
+});
+
+var data = pm.response.json();
+
+pm.test("Product Name Correct", function () {
+    pm.expect(data.product_name).to.eql("T-Shirt");
+});
+
+Expected Result:
+
+✓ Status Code is 201
+✓ Product Name Correct

@@ -1,0 +1,508 @@
+{
+  "info": {
+    "_postman_id": "c7a8b415-dcfa-4f51-b8eb-9d8ff7227653",
+    "name": "SmartStoreAPI Collection",
+    "description": "Complete Postman Collection for testing all public and protected routes of the SmartStoreAPI mini project.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "User Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData.status === true && jsonData.token) {",
+                  "    pm.collectionVariables.set(\"token\", jsonData.token);",
+                  "    console.log(\"Token automatically saved to collection variable: token\");",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"john_doe\",\n    \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/login.php",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "login.php"
+              ]
+            },
+            "description": "Logs in the user and automatically saves the JWT token into the collection variable."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get All Products",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products.php",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products.php"
+              ]
+            },
+            "description": "Public route to get all products."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Product By ID",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products.php?id=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Public route to retrieve a single product detail by ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Wireless Charger\",\n    \"description\": \"Fast charging magnetic stand.\",\n    \"price\": 49.99,\n    \"stock\": 80\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products.php",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products.php"
+              ]
+            },
+            "description": "Protected route (Requires Bearer Token) to create a new product."
+          },
+          "response": []
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Wireless Charger v2\",\n    \"description\": \"Upgraded 15W fast charging magnetic stand.\",\n    \"price\": 54.99,\n    \"stock\": 120\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products.php?id=6",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "6"
+                }
+              ]
+            },
+            "description": "Protected route (Requires Bearer Token) to update a product."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products.php?id=6",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "6"
+                }
+              ]
+            },
+            "description": "Protected route (Requires Bearer Token) to delete a product."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/users.php",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users.php"
+              ]
+            },
+            "description": "Protected route to retrieve all registered users."
+          },
+          "response": []
+        },
+        {
+          "name": "Get User By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/users.php?id=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Protected route to retrieve a user details by ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"alice_green\",\n    \"email\": \"alice@example.com\",\n    \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users.php",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users.php"
+              ]
+            },
+            "description": "Protected route to create a new user (with password hashing)."
+          },
+          "response": []
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"alice_green_updated\",\n    \"email\": \"alice_new@example.com\",\n    \"password\": \"newpassword123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users.php?id=3",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "3"
+                }
+              ]
+            },
+            "description": "Protected route to update a user's details. Password field is optional."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/users.php?id=3",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "3"
+                }
+              ]
+            },
+            "description": "Protected route to delete a user."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Get All Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/orders.php",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "orders.php"
+              ]
+            },
+            "description": "Protected route to retrieve all orders."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Order By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/orders.php?id=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "orders.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Protected route to retrieve an order by ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Create Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user_id\": 1,\n    \"product_id\": 2,\n    \"quantity\": 2\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/orders.php",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "orders.php"
+              ]
+            },
+            "description": "Protected route to place a new order. Stock checks and total price calculations are handled."
+          },
+          "response": []
+        },
+        {
+          "name": "Update Order",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user_id\": 1,\n    \"product_id\": 2,\n    \"quantity\": 3\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/orders.php?id=3",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "orders.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "3"
+                }
+              ]
+            },
+            "description": "Protected route to update an order. Stock is automatically recalculated."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Order",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/orders.php?id=3",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "orders.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "3"
+                }
+              ]
+            },
+            "description": "Protected route to delete an order. Restores the stock level of the product."
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost/Web%20services,%20API,%20Extensions_assignments/session_9/SmartStoreAPI/api",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}

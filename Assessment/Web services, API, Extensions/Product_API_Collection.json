@@ -1,0 +1,32 @@
+Q2. API Testing with Postman (10 Marks)
+
+Step 1:
+Created a Postman Collection named "Product API Collection".
+
+Step 2:
+Added the following API requests:
+1. GET /products
+2. POST /products
+3. PUT /products/{id}
+4. DELETE /products/{id}
+
+Step 3:
+Added a test for successful product creation in the POST request.
+
+Postman Test Script:
+
+pm.test("Status code is 201", function () {
+    pm.response.to.have.status(201);
+});
+
+pm.test("Product Created Successfully", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.message).to.eql("Product Added Successfully");
+});
+
+Step 4:
+Executed the requests and verified the responses.
+
+Step 5:
+Exported the collection using:
+Collection → Export → Collection v2.1 JSON Format

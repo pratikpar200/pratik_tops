@@ -1,0 +1,22 @@
+Q3. Create a Postman environment for a Flipkart-style product API with a variable baseUrl, and use this variable in your requests to fetch product details.
+
+Steps:
+
+1. Click Environments in Postman.
+2. Click Create New Environment.
+3. Environment Name: FlipkartAPI
+
+4. Add Variable:
+
+Variable Name : baseUrl
+Initial Value : http://localhost/api
+Current Value : http://localhost/api
+
+5. Save the environment.
+
+6. Use the variable in requests:
+
+GET {{baseUrl}}/products
+
+7. Select the environment and click Send.
+8. Verify product details are returned successfully.
