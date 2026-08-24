@@ -1,0 +1,38 @@
+MVC Pattern in Laravel — Explained with Zomato Example
+========================================================
+
+MVC (Model-View-Controller) is a design pattern that separates an
+application into three parts, making code organized and easy to maintain.
+
+1. MODEL
+   - Represents data and interacts with the database.
+   - Handles business logic like fetching, saving, and validating data.
+   - Example: A "Restaurant" model represents restaurant data
+     (name, rating, menu) stored in the database.
+
+2. VIEW
+   - The presentation layer — what the user actually sees.
+   - In Laravel, Views are Blade template files (.blade.php).
+   - Example: The restaurant listing page showing restaurant cards,
+     ratings, and images is built using a Blade view file.
+
+3. CONTROLLER
+   - Acts as the middleman between Model and View.
+   - Receives the user's request, asks the Model for data,
+     and passes that data to the View to display.
+   - Example: RestaurantController receives a request for
+     "restaurants near me," asks the Restaurant Model to fetch
+     matching restaurants, then sends that data to the view.
+
+FLOW EXAMPLE (Zomato):
+1. User opens "Restaurants Near Me" page -> request hits a Route.
+2. Route calls RestaurantController@index.
+3. Controller asks the Restaurant Model to fetch nearby restaurants
+   from the database.
+4. Controller passes that data to a View (restaurants.blade.php).
+5. View renders the final HTML page shown to the user in the browser.
+
+The same pattern applies to BookMyShow:
+- Movie Model -> holds movie data
+- MovieController -> fetches showtimes
+- View -> displays seat layout/showtimes to the user
