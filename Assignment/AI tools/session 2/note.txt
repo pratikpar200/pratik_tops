@@ -1,0 +1,4 @@
+AI-generated code helps developers save time and improve productivity. 
+However, it may contain syntax or logical errors, so it should always be tested before use.
+ In this assignment, I tested the generated code and made corrections where needed. 
+ Therefore, AI should be used as a helpful assistant, not as a replacement for proper testing.
