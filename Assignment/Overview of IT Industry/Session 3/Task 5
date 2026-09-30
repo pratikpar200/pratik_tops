@@ -1,0 +1,13 @@
+DNS Hierarchy for www.google.com:
+
+1. Root (.):
+   - The highest level in DNS hierarchy represented by the invisible dot at the end (www.google.com.). It directs queries to top-level domain servers.
+
+2. TLD (Top-Level Domain):
+   - The main extension after the domain name. In "www.google.com", ".com" is the TLD.
+
+3. Domain:
+   - The registered unique brand/organization name. In "www.google.com", "google" is the domain name.
+
+4. Subdomain:
+   - The specific prefix that precedes the root domain name. In "www.google.com", "www" is the subdomain.

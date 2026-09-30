@@ -1,0 +1,5 @@
+1. 200 (OK): The request was successful and the server returned the requested data.
+2. 301 (Moved Permanently): The requested resource has been permanently moved to a new URL.
+3. 404 (Not Found): The requested resource or webpage could not be found on the server.
+4. 500 (Internal Server Error): The server encountered an unexpected error while processing the request.
+5. 403 (Forbidden): Access is denied because the client does not have permission to view the resource.

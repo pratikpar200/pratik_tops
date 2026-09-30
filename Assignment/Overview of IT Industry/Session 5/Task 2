@@ -1,0 +1,2 @@
+1. git fetch: Downloads recent commits and references from the remote repository to your local machine, but does not merge them into your working files.
+2. git pull: Downloads recent changes from the remote repository and automatically merges them into your active local working branch (git fetch + git merge).

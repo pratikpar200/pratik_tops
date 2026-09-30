@@ -1,0 +1,3 @@
+1. Presentation Layer (Frontend): The user interface layer where users view and interact with the application.
+2. Application Layer (Backend / Logic): The middle layer that processes user requests and handles business logic.
+3. Data Layer (Database): The storage layer that securely stores, retrieves, and manages application data.

@@ -1,0 +1,14 @@
+1. Initialize a new Git repository:
+   git init
+
+2. Stage all modified and untracked files:
+   git add .
+
+3. Commit staged changes with a message:
+   git commit -m "Your commit message"
+
+4. Push local commits to a remote repository:
+   git push origin main
+
+5. Fetch and merge remote changes into current branch:
+   git pull origin main

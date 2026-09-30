@@ -1,0 +1,15 @@
+1. HTTP:
+   - Full Form: HyperText Transfer Protocol
+   - Use: Used for transmitting standard unencrypted web pages and resources across the internet.
+
+2. HTTPS:
+   - Full Form: HyperText Transfer Protocol Secure
+   - Use: Used for securely transmitting encrypted web traffic to protect user data.
+
+3. FTP:
+   - Full Form: File Transfer Protocol
+   - Use: Used for transferring files between a client computer and a remote server.
+
+4. SMTP:
+   - Full Form: Simple Mail Transfer Protocol
+   - Use: Used for sending outgoing email messages across internet networks.

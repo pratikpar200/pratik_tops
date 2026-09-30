@@ -1,0 +1,16 @@
+Command:
+nslookup google.com
+
+Sample Output:
+Non-authoritative answer:
+Server:  UnKnown
+Address:  fe80::d42f:caff:feda:1f64
+
+Name:    google.com
+Addresses:  2404:6800:4002:830::200e
+	  192.178.158.139
+	  192.178.158.100
+	  192.178.158.113
+	  192.178.158.101
+	  192.178.158.102
+	  192.178.158.138
