@@ -1,0 +1,119 @@
+/* ======================================================
+   CAR CARE - Admin Panel Custom Stylesheet
+   ====================================================== */
+.bg-admin-body {
+    background-color: #0b0f19;
+    color: #cbd5e1;
+}
+
+
+
+.admin-header {
+    height: 60px;
+    z-index: 1040;
+}
+.admin-sidebar {
+    width: 260px;
+    height: calc(100vh - 60px);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 1030;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+}
+
+.admin-main-content {
+    margin-left: 260px;
+    transition: all 0.3s ease;
+}
+
+.admin-sidebar.collapsed {
+    margin-left: -260px;
+}
+
+.admin-main-content.expanded {
+    margin-left: 0;
+}
+
+.sidebar-nav .nav-link {
+    color: #94a3b8;
+    border-radius: 0.5rem;
+    padding: 0.65rem 1rem;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.sidebar-nav .nav-link:hover, .sidebar-nav .nav-link.active {
+    background-color: var(--dark-card, #1e293b);
+    color: #ffb703;
+}
+
+.stat-card {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.admin-table-card {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.table-dark-custom {
+    color: #e2e8f0;
+    margin-bottom: 0;
+}
+.table-dark-custom th {
+    background: #0f172a;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+.table-dark-custom td {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    vertical-align: middle;
+}
+
+@media (max-width: 991px) {
+    .admin-sidebar { margin-left: -260px; }
+    .admin-sidebar.show-mobile { margin-left: 0; }
+    .admin-main-content { margin-left: 0; }
+}
+
+/* Final Text Color Override */
+
+.admin-main-content h1,
+.admin-main-content h2,
+.admin-main-content h3,
+.admin-main-content h4,
+.admin-main-content h5,
+.admin-main-content h6 {
+    color: #d1d5db !important;
+}
+
+.admin-main-content p,
+.admin-main-content label,
+.admin-main-content span,
+.admin-main-content div {
+    color: #bfc7d5 !important;
+}
+
+.admin-main-content table td,
+.admin-main-content table th {
+    color: #cbd5e1 !important;
+}
+
+.admin-main-content .text-muted {
+    color: #94a3b8 !important;
+}

@@ -1,0 +1,36 @@
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .glass-sidebar {
+        position: fixed;
+        left: -320px;
+        top: 0;
+        height: 100vh;
+        z-index: 2000;
+        border-radius: 0 24px 24px 0;
+        transition: left 0.3s ease-in-out;
+    }
+    
+    .glass-sidebar.show {
+        left: 0;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+
+    .search-box {
+        display: none !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .glass-wrapper {
+        padding: 0.5rem;
+    }
+    .stat-card {
+        padding: 1rem !important;
+    }
+    .glass-topbar {
+        padding: 0.8rem 1rem;
+    }
+}
